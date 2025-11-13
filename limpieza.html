@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cronograma de Limpieza del Retiro - Iglesia Nuestra Señora del Líbano</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Garamond', 'Georgia', serif;
+            background: linear-gradient(rgba(139, 115, 85, 0.7), rgba(101, 67, 33, 0.8)),
+                        url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><text y="50" font-size="60" opacity="0.15">🕊️</text></svg>');
+            background-color: #8b7355;
+            background-size: 200px 200px;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .container {
+            background: linear-gradient(to bottom, #f4e4c1 0%, #e8d4a0 100%);
+            border: 8px double #8b6914;
+            border-radius: 3px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5), 
+                        inset 0 0 100px rgba(139, 105, 20, 0.1);
+            padding: 40px;
+            max-width: 900px;
+            width: 100%;
+            position: relative;
+        }
+
+        .container::before {
+            content: '🕊️';
+            position: absolute;
+            top: 10px;
+            left: 20px;
+            font-size: 40px;
+            opacity: 0.3;
+        }
+
+        .container::after {
+            content: '🕊️';
+            position: absolute;
+            top: 10px;
+            right: 20px;
+            font-size: 40px;
+            opacity: 0.3;
+        }
+
+        h1 {
+            text-align: center;
+            color: #5c3d0f;
+            margin-bottom: 10px;
+            font-size: 32px;
+            font-weight: bold;
+            text-shadow: 2px 2px 4px rgba(139, 105, 20, 0.3);
+            letter-spacing: 1px;
+        }
+
+        .church-name {
+            text-align: center;
+            color: #8b6914;
+            font-size: 20px;
+            font-style: italic;
+            margin-bottom: 30px;
+            text-shadow: 1px 1px 2px rgba(139, 105, 20, 0.2);
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+            background: rgba(255, 255, 255, 0.5);
+        }
+
+        th, td {
+            border: 3px solid #8b6914;
+            padding: 15px;
+            text-align: center;
+            font-size: 14px;
+        }
+
+        th {
+            background: linear-gradient(to bottom, #c19a6b 0%, #a67c52 100%);
+            color: #2f1f0f;
+            font-weight: bold;
+            text-transform: uppercase;
+            text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.3);
+            letter-spacing: 1px;
+        }
+
+        .row-header {
+            background: linear-gradient(to bottom, #d4a574 0%, #c19a6b 100%);
+            font-weight: bold;
+            text-align: left;
+            text-transform: uppercase;
+            color: #2f1f0f;
+        }
+
+        .cell-empty {
+            background: linear-gradient(to bottom, #d4a574 0%, #c19a6b 100%);
+            font-weight: bold;
+            color: #5c3d0f;
+        }
+
+        .cell-blue {
+            background: linear-gradient(to bottom, #e8dcc4 0%, #d4c4a8 100%);
+            color: #3d2f1f;
+        }
+
+        .cell-green {
+            background: linear-gradient(to bottom, #d4c4a8 0%, #c4b498 100%);
+            color: #3d2f1f;
+        }
+
+        .note {
+            font-size: 13px;
+            color: #5c3d0f;
+            margin-top: 20px;
+            text-align: center;
+            font-style: italic;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 15px;
+            }
+
+            h1 {
+                font-size: 22px;
+            }
+
+            th, td {
+                padding: 8px;
+                font-size: 12px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>✝ Cronograma de Limpieza del Retiro ✝</h1>
+        <div class="church-name">Iglesia Nuestra Señora del Líbano</div>
+        
+        <table>
+            <thead>
+                <tr>
+                    <th>Actividad</th>
+                    <th>Viernes</th>
+                    <th>Sábado</th>
+                    <th>Domingo</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="row-header">Desayuno</td>
+                    <td class="cell-empty">X</td>
+                    <td class="cell-blue">Grupo 1</td>
+                    <td class="cell-blue">Grupo 2</td>
+                </tr>
+                <tr>
+                    <td class="row-header">Almuerzo</td>
+                    <td class="cell-empty">X</td>
+                    <td class="cell-blue">Grupo 2</td>
+                    <td class="cell-blue">Grupo 1</td>
+                </tr>
+                <tr>
+                    <td class="row-header">Merienda</td>
+                    <td class="cell-empty">X</td>
+                    <td class="cell-blue">Grupo 1</td>
+                    <td class="cell-blue">Todos</td>
+                </tr>
+                <tr>
+                    <td class="row-header">Cena</td>
+                    <td class="cell-blue">Todos</td>
+                    <td class="cell-blue">Grupo 1</td>
+                    <td class="cell-blue">X</td>
+                </tr>
+                <tr>
+                    <td class="row-header">Baños</td>
+                    <td class="cell-empty">X</td>
+                    <td class="cell-green">Hombres: Todos los hombres<br>Mujeres: 1/2 del grupo total de mujeres</td>
+                    <td class="cell-green">(Cierre de retiro)<br>Hombres: Todos los hombres<br>Mujeres: Otro 1/2 del grupo total de mujeres</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="note">
+            <p>🕊️ <strong>el que quiera hacerse grande entre vosotros será vuestro servidor,  y el que quiera ser el primero entre vosotros será vuestro siervo</strong> 🕊️</p>
+            <p style="margin-top: 10px;">Todos los participantes deben colaborar según el grupo asignado</p>
+        </div>
+    </div>
+</body>
+</html>

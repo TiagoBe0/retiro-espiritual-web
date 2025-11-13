@@ -1,0 +1,577 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Retiro de Jóvenes 2025 - Iglesia Nuestra Señora del Líbano</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Garamond', 'Georgia', serif;
+            background: linear-gradient(rgba(139, 115, 85, 0.7), rgba(101, 67, 33, 0.8)),
+                        url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><text y="50" font-size="60" opacity="0.15">🕊️</text></svg>');
+            background-color: #8b7355;
+            background-size: 200px 200px;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            background: linear-gradient(to bottom, #f4e4c1 0%, #e8d4a0 100%);
+            border: 8px double #8b6914;
+            border-radius: 3px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5), 
+                        inset 0 0 100px rgba(139, 105, 20, 0.1);
+            padding: 40px;
+            max-width: 1200px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .container::before {
+            content: '🕊️';
+            position: absolute;
+            top: 10px;
+            left: 20px;
+            font-size: 40px;
+            opacity: 0.3;
+        }
+
+        .container::after {
+            content: '🕊️';
+            position: absolute;
+            top: 10px;
+            right: 20px;
+            font-size: 40px;
+            opacity: 0.3;
+        }
+
+        h1 {
+            text-align: center;
+            color: #5c3d0f;
+            margin-bottom: 10px;
+            font-size: 36px;
+            font-weight: bold;
+            text-shadow: 2px 2px 4px rgba(139, 105, 20, 0.3);
+            letter-spacing: 2px;
+        }
+
+        .church-name {
+            text-align: center;
+            color: #8b6914;
+            font-size: 22px;
+            font-style: italic;
+            margin-bottom: 30px;
+            text-shadow: 1px 1px 2px rgba(139, 105, 20, 0.2);
+        }
+
+        .info-box {
+            background: rgba(193, 154, 107, 0.2);
+            border: 3px solid #8b6914;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 5px;
+        }
+
+        .info-box h2 {
+            color: #5c3d0f;
+            font-size: 24px;
+            margin-bottom: 15px;
+            border-bottom: 2px solid #8b6914;
+            padding-bottom: 10px;
+        }
+
+        .info-box p, .info-box ul {
+            color: #3d2f1f;
+            line-height: 1.8;
+            font-size: 16px;
+            margin-bottom: 12px;
+            text-align: justify;
+        }
+
+        .info-box ul {
+            list-style-position: inside;
+            padding-left: 20px;
+        }
+
+        .info-box li {
+            margin-bottom: 8px;
+        }
+
+        .highlight {
+            background: rgba(139, 105, 20, 0.15);
+            padding: 15px;
+            border-left: 4px solid #8b6914;
+            margin: 15px 0;
+            font-style: italic;
+        }
+
+        .dates-location {
+            text-align: center;
+            background: linear-gradient(to bottom, #c19a6b 0%, #a67c52 100%);
+            color: #2f1f0f;
+            padding: 20px;
+            margin: 20px 0;
+            border: 3px solid #8b6914;
+            border-radius: 5px;
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        .dates-location div {
+            margin: 8px 0;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            background: rgba(255, 255, 255, 0.5);
+        }
+
+        th, td {
+            border: 3px solid #8b6914;
+            padding: 12px;
+            text-align: center;
+            font-size: 14px;
+        }
+
+        th {
+            background: linear-gradient(to bottom, #c19a6b 0%, #a67c52 100%);
+            color: #2f1f0f;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+
+        .day-header {
+            background: linear-gradient(to bottom, #d4a574 0%, #c19a6b 100%);
+            font-weight: bold;
+            color: #2f1f0f;
+            font-size: 16px;
+        }
+
+        .time-col {
+            background: linear-gradient(to bottom, #e8d4a8 0%, #d4c088 100%);
+            font-weight: bold;
+            width: 120px;
+        }
+
+        .activity-col {
+            background: linear-gradient(to bottom, #f4e4c1 0%, #e8d4a0 100%);
+            color: #3d2f1f;
+            text-align: left;
+            padding-left: 15px;
+        }
+
+        .responsible-col {
+            background: linear-gradient(to bottom, #d4c4a8 0%, #c4b498 100%);
+            font-style: italic;
+        }
+
+        .scripture {
+            background: rgba(139, 105, 20, 0.1);
+            padding: 12px;
+            margin: 10px 0;
+            border-left: 4px solid #8b6914;
+            font-family: 'Georgia', serif;
+            font-style: italic;
+            color: #5c3d0f;
+        }
+
+        .charla-box {
+            background: rgba(212, 196, 168, 0.3);
+            border: 2px solid #8b6914;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 5px;
+        }
+
+        .charla-box h3 {
+            color: #5c3d0f;
+            margin-bottom: 10px;
+            font-size: 18px;
+        }
+
+        .charla-box p {
+            color: #3d2f1f;
+            line-height: 1.6;
+            text-align: justify;
+        }
+
+        .footer {
+            text-align: center;
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 3px double #8b6914;
+            color: #5c3d0f;
+            font-style: italic;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 20px;
+            }
+
+            h1 {
+                font-size: 28px;
+            }
+
+            .church-name {
+                font-size: 18px;
+            }
+
+            .info-box h2 {
+                font-size: 20px;
+            }
+
+            .info-box p, .info-box ul {
+                font-size: 14px;
+            }
+
+            th, td {
+                padding: 8px;
+                font-size: 12px;
+            }
+
+            .time-col {
+                width: 80px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>✝ Retiro de Jóvenes 2025 ✝</h1>
+        <div class="church-name">Iglesia Nuestra Señora del Líbano</div>
+
+        <div class="dates-location">
+            <div>📅 Fecha: 14, 15 y 16 de noviembre de 2025</div>
+            <div>📍 Lugar: Escuela P-126 "Madre Amable"</div>
+        </div>
+
+        <!-- Especificaciones -->
+        <div class="info-box">
+            <h2>🕊️ Especificaciones   <a href="limpieza.html">Cronograma de limpieza</a></h2>
+            <p>Los chicos del grupo de jóvenes de la parroquia comenzaron este año manifestando su deseo de continuar (luego de la confirmación) en el grupo, debido a la necesidad de seguir conociendo más y experimentando aquello que habían empezado a descubrir en el proceso de catecumenado.</p>
+            
+            <p>Es la finalidad de este grupo poder formar un poco más y mostrar a los jóvenes que el servicio pastoral no es una actividad concreta ni un pasatiempo, sino, <strong>"un estilo de vida"</strong>, la manera en que el Señor quiere que vivamos...</p>
+            
+            <p>A lo largo de los meses los jóvenes han tenido encuentros de formación, espiritualidad y fraternidad.</p>
+            
+            <div class="highlight">
+                "Los Jóvenes son el presente, lo están enriqueciendo con su aporte. Un joven ya no es un niño, está en un momento de la vida en que comienza a tomar distintas responsabilidades, participando con los adultos en el desarrollo de la familia, de la sociedad, de la iglesia." - Papa Francisco, 2019
+            </div>
+            
+            <p>Es por eso que este Retiro tiene el objetivo de ayudar en el discernimiento personal, para la toma de decisiones en la vida pastoral.</p>
+            
+            <p>Para ello, la figura de Jesús será centro y clave de todo el retiro. Poniendo la mirada y haciendo hincapié en algunas lecturas que nos ayudan a comprender la importancia de discernir la voluntad del Padre y nuestra libertad para decidir en las diferentes circunstancias y momentos de nuestra vida. En este caso reflexionar acerca de nuestros talentos y permanencia pastoral.</p>
+        </div>
+
+        <!-- Objetivos -->
+        <div class="info-box">
+            <h2>🎯 Objetivos</h2>
+            <p>Si bien no hay una sola cita o lectura que se trabaje durante el retiro, como ya dijimos, será la vida de Jesús mismo lo que nos dará las herramientas para aprender.</p>
+            <ul>
+                <li>Reflexionar acerca de la vida de Jesús que es revelación y testimonio del Padre para nosotros</li>
+                <li>Reconocer que todo lo que Jesús enseñó fue guardado celosamente y con amor en el corazón de los Apóstoles, por quienes conocemos mucho de la Vida de Cristo y que fueron quienes continuaron la misión que el Señor les había encomendado</li>
+                <li>Identificar la importancia de la oración para el discernimiento de la voluntad de Dios en nuestras vidas. Cada vez que Jesús debía discernir se retiraba para orar</li>
+                <li>Comprender que ante las decisiones que debemos tomar en la vida somos totalmente libres y responsables de las consecuencias de cada una de ellas. El Señor nos invita a seguirlo, no nos obliga</li>
+                <li>Reflexionar acerca de la propia vida y reconocer qué talentos me ha dado Dios y a qué me está llamando</li>
+            </ul>
+        </div>
+
+        <!-- Lecturas -->
+        <div class="info-box">
+            <h2>📖 Lecturas que nos acompañan a reflexionar</h2>
+            <div class="scripture">Eclesiastés 3, 1-8</div>
+            <div class="scripture">Lucas 22, 42</div>
+            <div class="scripture">Mateo 19, 16-24 / Marcos 10, 17-25</div>
+            <div class="scripture">Mateo 25, 14-30</div>
+        </div>
+
+        <!-- Cronograma VIERNES -->
+        <div class="info-box">
+            <h2>📅 Cronograma - VIERNES</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>HORARIO</th>
+                        <th>ACTIVIDAD</th>
+                        <th>RESPONSABLE</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="time-col">20:00 h</td>
+                        <td class="activity-col">Convocatoria</td>
+                        <td class="responsible-col">Santi, Tuqui y Giuli</td>
+                    </tr>
+                    <tr>
+                        <td class="time-col">21:00 h</td>
+                        <td class="activity-col">Oración de Inicio</td>
+                        <td class="responsible-col">Giuli</td>
+                    </tr>
+                    <tr>
+                        <td class="time-col">21:30 h</td>
+                        <td class="activity-col">Charla introducción / dinámica división de grupos</td>
+                        <td class="responsible-col">Santi, Tuqui y Giuli</td>
+                    </tr>
+                    <tr>
+                        <td class="time-col">22:00 h</td>
+                        <td class="activity-col">Cena</td>
+                        <td class="responsible-col">Todos</td>
+                    </tr>
+                    <tr>
+                        <td class="time-col">23:30 h</td>
+                        <td class="activity-col">Oración de la noche</td>
+                        <td class="responsible-col">Tuqui</td>
+                    </tr>
+                    <tr>
+                        <td class="time-col">00:00 h</td>
+                        <td class="activity-col">A dormir</td>
+                        <td class="responsible-col">Todos</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Cronograma SÁBADO -->
+        <div class="info-box">
+            <h2>📅 Cronograma - SÁBADO</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>HORARIO</th>
+                        <th>ACTIVIDAD</th>
+                        <th>RESPONSABLE</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="time-col">07:00 h</td>
+                        <td class="activity-col">Levantarse</td>
+                        <td class="responsible-col">Catequistas</td>
+                    </tr>
+                    <tr>
+                        <td class="time-col">07:30 h</td>
+                        <td class="activity-col">Despertar a los chicos</td>
+                        <td class="responsible-col">Catequistas</td>
+                    </tr>
+                    <tr>
+                        <td class="time-col">08:00 h</td>
+                        <td class="activity-col">Oración de la Mañana</td>
+                        <td class="responsible-col">Todos</td>
+                    </tr>
+                    <tr>
+                        <td class="time-col">08:30 h</td>
+                        <td class="activity-col">Desayuno</td>
+                        <td class="responsible-col">Todos</td>
+                    </tr>
+                    <tr>
+                        <td class="time-col">09:30 h</td>
+                        <td class="activity-col"><strong>Charla #1:</strong> "Jesús"</td>
+                        <td class="responsible-col">Santi</td>
+                    </tr>
+                    <tr>
+                        <td class="time-col">11:00 h</td>
+                        <td class="activity-col">Refrigerio / recreo</td>
+                        <td class="responsible-col">Catequistas</td>
+                    </tr>
+                    <tr>
+                        <td class="time-col">11:20 h</td>
+                        <td class="activity-col"><strong>Charla #2:</strong> "Los Apóstoles"</td>
+                        <td class="responsible-col">Santi</td>
+                    </tr>
+                    <tr>
+                        <td class="time-col">13:00 h</td>
+                        <td class="activity-col">Descanso</td>
+                        <td class="responsible-col">-</td>
+                    </tr>
+                    <tr>
+                        <td class="time-col">13:30 h</td>
+                        <td class="activity-col">Almuerzo</td>
+                        <td class="responsible-col">Todos</td>
+                    </tr>
+                    <tr>
+                        <td class="time-col">14:30 h</td>
+                        <td class="activity-col">Siesta</td>
+                        <td class="responsible-col">Jóvenes</td>
+                    </tr>
+                    <tr>
+                        <td class="time-col">15:40 h</td>
+                        <td class="activity-col">Despertar de la siesta</td>
+                        <td class="responsible-col">Catequistas</td>
+                    </tr>
+                    <tr>
+                        <td class="time-col">16:00 h</td>
+                        <td class="activity-col">Animación</td>
+                        <td class="responsible-col">-</td>
+                    </tr>
+                    <tr>
+                        <td class="time-col">16:30 h</td>
+                        <td class="activity-col"><strong>Charla #3:</strong> "La voluntad de Dios en mi Vida"</td>
+                        <td class="responsible-col">Lore Martínez</td>
+                    </tr>
+                    <tr>
+                        <td class="time-col">17:30 h</td>
+                        <td class="activity-col">Recreo / mediatarde</td>
+                        <td class="responsible-col">-</td>
+                    </tr>
+                    <tr>
+                        <td class="time-col">18:15 h</td>
+                        <td class="activity-col"><strong>Charla #4:</strong> "Saber Decidir" (Discernimiento)</td>
+                        <td class="responsible-col">Cris y Guada</td>
+                    </tr>
+                    <tr>
+                        <td class="time-col">20:00 h</td>
+                        <td class="activity-col">Recreo</td>
+                        <td class="responsible-col">-</td>
+                    </tr>
+                    <tr>
+                        <td class="time-col">20:30 h</td>
+                        <td class="activity-col">Rosario Guiado / Adoración</td>
+                        <td class="responsible-col">Giuli</td>
+                    </tr>
+                    <tr>
+                        <td class="time-col">22:00 h</td>
+                        <td class="activity-col">Cena</td>
+                        <td class="responsible-col">Todos y Cate</td>
+                    </tr>
+                    <tr>
+                        <td class="time-col">23:00 h</td>
+                        <td class="activity-col">Momento Comunidad</td>
+                        <td class="responsible-col">Santi, Tuqui y Giuli</td>
+                    </tr>
+                    <tr>
+                        <td class="time-col">01:00 h</td>
+                        <td class="activity-col">A dormir</td>
+                        <td class="responsible-col">-</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Cronograma DOMINGO -->
+        <div class="info-box">
+            <h2>📅 Cronograma - DOMINGO</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>HORARIO</th>
+                        <th>ACTIVIDAD</th>
+                        <th>RESPONSABLE</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="time-col">08:00 h</td>
+                        <td class="activity-col">Levantarse</td>
+                        <td class="responsible-col">Catequistas</td>
+                    </tr>
+                    <tr>
+                        <td class="time-col">08:30 h</td>
+                        <td class="activity-col">Levantar a los chicos</td>
+                        <td class="responsible-col">Jóvenes</td>
+                    </tr>
+                    <tr>
+                        <td class="time-col">09:00 h</td>
+                        <td class="activity-col">Oración de la mañana</td>
+                        <td class="responsible-col">-</td>
+                    </tr>
+                    <tr>
+                        <td class="time-col">09:30 h</td>
+                        <td class="activity-col">Desayuno</td>
+                        <td class="responsible-col">Todos</td>
+                    </tr>
+                    <tr>
+                        <td class="time-col">10:00 h</td>
+                        <td class="activity-col"><strong>Charla #5:</strong> "¿Y ahora qué?"</td>
+                        <td class="responsible-col">-</td>
+                    </tr>
+                    <tr>
+                        <td class="time-col">12:00 h</td>
+                        <td class="activity-col"><strong>Charla #6:</strong> El servicio es un estilo de vida</td>
+                        <td class="responsible-col">Misioneros</td>
+                    </tr>
+                    <tr>
+                        <td class="time-col">13:30 h</td>
+                        <td class="activity-col">Almuerzo</td>
+                        <td class="responsible-col">Todos</td>
+                    </tr>
+                    <tr>
+                        <td class="time-col">14:30 h</td>
+                        <td class="activity-col">Descanso</td>
+                        <td class="responsible-col">-</td>
+                    </tr>
+                    <tr>
+                        <td class="time-col">15:00 h</td>
+                        <td class="activity-col">Momento Fraterno</td>
+                        <td class="responsible-col">Giuli, Santi y Tuqui</td>
+                    </tr>
+                    <tr>
+                        <td class="time-col">16:30 h</td>
+                        <td class="activity-col">Limpiar / Hacer los bolsos</td>
+                        <td class="responsible-col">Todos</td>
+                    </tr>
+                    <tr>
+                        <td class="time-col">18:00 h</td>
+                        <td class="activity-col">Nos vamos del colegio</td>
+                        <td class="responsible-col">Todos</td>
+                    </tr>
+                    <tr>
+                        <td class="time-col">20:00 h</td>
+                        <td class="activity-col">Misa de cierre</td>
+                        <td class="responsible-col">Todos</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Detalles de las Charlas -->
+        <div class="info-box">
+            <h2>💬 Detalles de las Charlas</h2>
+            <p style="font-style: italic; margin-bottom: 20px;">El charlista tiene libertad para preparar la Charla como mejor le parezca, teniendo en cuenta los objetivos y especificaciones.</p>
+            
+            <div class="charla-box">
+                <h3>✝ CHARLA #1: Jesús</h3>
+                <p><strong>Objetivo:</strong> Reflexionar acerca de la vida de Jesús que es revelación y testimonio del Padre para nosotros.</p>
+                <p>Un pequeño recorrido por su vida, para introducir en la reflexión y ordenarla cronológicamente, que ayudará a los jóvenes a tener una visión más organizada y atenta al proceso por el cual el Señor se encaminó a la cruz para amarnos hasta el extremo.</p>
+            </div>
+
+            <div class="charla-box">
+                <h3>✝ CHARLA #2: Los Apóstoles</h3>
+                <p><strong>Objetivo:</strong> Reconocer que todo lo que Jesús enseñó fue guardado celosamente y con amor en el corazón de los Apóstoles, por quienes conocemos mucho de la Vida de Cristo y que fueron quienes continuaron la misión que el Señor les había encomendado. Ahora somos nosotros su iglesia quienes continuamos esa misión.</p>
+            </div>
+
+            <div class="charla-box">
+                <h3>✝ CHARLA #3: La voluntad de Dios en mi vida</h3>
+                <p><strong>Lectura:</strong> Lucas 22, 42 (Si desea puede abarcar más versículos)</p>
+                <p><strong>Objetivo:</strong> Identificar la importancia de la oración para el discernimiento de la voluntad de Dios en nuestras vidas. Cada vez que Jesús debía discernir se retiraba para orar. Dios solo quiere que seamos felices, pero también se sirve de las dificultades de la vida para enseñarnos. Jesús nos enseña que la voluntad de Dios no siempre es sencilla pero siempre es lo mejor.</p>
+            </div>
+
+            <div class="charla-box">
+                <h3>✝ CHARLA #4: "Saber decidir" (Discernimiento)</h3>
+                <p><strong>Lectura:</strong> Mateo 19, 16-24 / Marcos 10, 17-25 (puede usar la que mejor le parezca)</p>
+                <p><strong>Objetivos:</strong> Comprender que ante las decisiones que debemos tomar en la vida somos totalmente libres y responsables de las consecuencias de cada una de ellas. El Señor nos invita a seguirlo, no nos obliga.</p>
+                <p>Identificar qué es Dios para mí. A qué le doy más valor.</p>
+            </div>
+
+            <div class="charla-box">
+                <h3>✝ CHARLA #5: ¿Y ahora qué?</h3>
+                <p><strong>Lectura:</strong> Mateo 25, 14-30</p>
+                <p><strong>Objetivo:</strong> Reflexionar acerca de la propia vida y reconocer qué talentos me ha dado Dios y a qué me está llamando. Me ha pensado, por algo estoy aquí, tengo una misión.</p>
+            </div>
+        </div>
+
+        <div class="footer">
+            <p>🕊️ Que cada uno sirva a los demás según el don que haya recibido 🕊️</p>
+            <p style="margin-top: 10px;">Iglesia Nuestra Señora del Líbano</p>
+        </div>
+    </div>
+</body>
+</html>
